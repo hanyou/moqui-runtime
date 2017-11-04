@@ -34,6 +34,12 @@ along with this software (see the LICENSE.md file). If not, see
 
     <!-- Add external theme(s) here  -->
     <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="10" resourceTypeEnumId="STRT_STYLESHEET" resourceValue=""/>
+    <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="11" resourceTypeEnumId="STRT_STYLESHEET"
+                                      resourceValue="/libs/ionicons/css/ionicons.min.css"/>
+    <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="12" resourceTypeEnumId="STRT_STYLESHEET"
+                                      resourceValue="/libs/admin-lte/css/AdminLTE.min.css"/>
+    <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="13" resourceTypeEnumId="STRT_STYLESHEET"
+                                      resourceValue="/libs/admin-lte/css/skins/_all-skins.min.css"/>
 
     <!-- Webroot layout and theme -->
     <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="20" resourceTypeEnumId="STRT_STYLESHEET"
