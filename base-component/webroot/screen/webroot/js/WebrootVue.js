@@ -1108,7 +1108,7 @@ moqui.webrootVue = new Vue({
                 var vm = this;
                 $.ajax({ type:"GET", url:"/menuData" + screenUrl, dataType:"text", error:moqui.handleAjaxError, success: function(outerListText) {
                     var outerList = null;
-                    // console.log("menu response " + outerListText);
+                    //console.log("menu response " + outerListText);
                     try { outerList = JSON.parse(outerListText); } catch (e) { console.info("Error parson menu list JSON: " + e); }
                     if (outerList && moqui.isArray(outerList)) { vm.navMenuList = outerList; /* console.info('navMenuList ' + JSON.stringify(outerList)); */ }
                 }});
@@ -1184,6 +1184,7 @@ moqui.webrootVue = new Vue({
     },
     watch: {
         navMenuList: function(newList) { if (newList.length > 0) {
+            console.log(newList);
             var cur = newList[newList.length - 1];
             var par = newList.length > 1 ? newList[newList.length - 2] : null;
             // if there is an extraPathList set it now

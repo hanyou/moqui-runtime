@@ -51,6 +51,12 @@ def fileMap = [
     "admin-lte/2.4.2/js/adminlte.min.js":"",
     "admin-lte/2.4.2/js/demo.js":"",
 
+    //admin-lte
+    "iCheck/1.0.2/icheck.min.js":"",
+    "iCheck/1.0.2/skins/square/blue.css":"",
+    "iCheck/1.0.2/skins/square/blue.png":"",
+    "iCheck/1.0.2/skins/square/blue@2x.png":"",
+
     "bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css":"",
     "bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js":"",
 
@@ -66,6 +72,7 @@ def fileMap = [
     //admin-lte
     "jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js":"",
     "fastclick/1.0.6/fastclick.min.js":"",
+    "pace/1.0.2/pace.min.js":"",
 
     // can get jquery-sortable-lists from cdnjs? http://camohub.github.io/jquery-sortable-lists/
 

@@ -34,8 +34,10 @@ along with this software (see the LICENSE.md file). If not, see
         html_scripts.add('/libs/jquery/jquery.min.js')
         // Bootstrap
         html_scripts.add('/libs/twitter-bootstrap/js/bootstrap.min.js')
-        // Moqui webroot layout
-        html_stylesheets.add('/css/webroot-layout.css')
+
+        // iCheck
+        html_stylesheets.add('/libs/iCheck/square/blue.css')
+        html_scripts.add('/libs/iCheck/icheck.min.js')
     </script></pre-actions>
     <widgets>
         <!-- NOTE: this screen is not under the apps screen, but uses similar header/footer/etc -->
@@ -86,7 +88,7 @@ along with this software (see the LICENSE.md file). If not, see
                 <form method="post" action="${sri.buildUrl("login").url}" id="TestLoginLink">
                     <input type="hidden" name="username" value="john.doe">
                     <input type="hidden" name="password" value="moqui">
-                    <button class="btn btn-sm btn-primary" type="submit" id="TestLoginLink_button">Test Login (John Doe)</button>
+                    <button class="btn btn-primary btn-sm btn-flat" type="submit" id="TestLoginLink_button">Test Login (John Doe)</button>
                 </form>
                 <script>$("#TestLoginLink_button").focus();</script>
                 ]]></text></render-mode></widgets>

@@ -5,7 +5,8 @@
         <div class="col-sm-2"><a href="https://www.google.com/chrome/"><i class="fa fa-chrome"></i></a></div>
         <div class="col-sm-2"><a href="https://www.mozilla.org/firefox/"><i class="fa fa-firefox"></i></a></div>
         <div class="col-sm-2"><a href="https://www.apple.com/safari/"><i class="fa fa-safari"></i></a></div>
-        <div class="col-sm-2"><a href="https://www.microsoft.com/windows/microsoft-edge"><i class="fa fa-edge"></i></a></div>
+        <div class="col-sm-2"><a href="https://www.microsoft.com/windows/microsoft-edge"><i class="fa fa-edge"></i></a>
+        </div>
         <div class="col-sm-2"></div>
     </div>
 </div>
@@ -17,41 +18,65 @@
     if (isIE) $("#browser-warning").removeClass("hidden");
 </script>
 
-<div class="tab-content">
-    <div id="login" class="tab-pane active">
-        <form method="post" action="${sri.buildUrl("login").url}" class="form-signin" id="login_form">
-            <p class="text-muted text-center">Enter your username and password to sign in</p>
-            <#-- not needed for this request: <input type="hidden" name="moquiSessionToken" value="${ec.web.sessionToken}"> -->
-            <input type="text" name="username" value="${(ec.getWeb().getErrorParameters().get("username"))!""}" placeholder="Username" required="required" class="form-control top" id="login_form_username">
-            <input type="password" name="password" placeholder="Password" required="required" class="form-control bottom">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-        <script>$("#login_form_username").focus();</script>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>Admin</b>LTE</a>
     </div>
-    <div id="reset" class="tab-pane">
-        <form method="post" action="${sri.buildUrl("resetPassword").url}" class="form-signin" id="reset_form">
-            <p class="text-muted text-center">Enter your username to reset and email your password</p>
-            <input type="hidden" name="moquiSessionToken" value="${ec.web.sessionToken}">
-            <input type="text" name="username" placeholder="Username" required="required" class="form-control">
-            <button class="btn btn-lg btn-danger btn-block" type="submit">Reset and Email Password</button>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form action="${sri.buildUrl("login").url}" id="login_form" method="post">
+            <div class="form-group has-feedback">
+                <input type="text" name="username" value="${(ec.getWeb().getErrorParameters().get("username"))!""}"
+                       placeholder="Username" required="required" class="form-control" id="login_form_username">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" name="password" placeholder="Password" required="required"
+                       class="form-control">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox"> Remember Me
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div>
+                <!-- /.col -->
+            </div>
         </form>
+
+        <div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in
+                using
+                Facebook</a>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in
+                using
+                Google+</a>
+        </div>
+        <!-- /.social-auth-links -->
+
+        <a href="#">I forgot my password</a><br>
+        <a href="#" class="text-center">Register a new membership</a>
+
     </div>
-    <div id="change" class="tab-pane">
-        <form method="post" action="${sri.buildUrl("changePassword").url}" class="form-signin" id="change_form">
-            <p class="text-muted text-center">Enter details to change your password</p>
-            <input type="hidden" name="moquiSessionToken" value="${ec.web.sessionToken}">
-            <input type="text" name="username" value="${(ec.getWeb().getErrorParameters().get("username"))!""}" placeholder="Username" required="required" class="form-control top">
-            <input type="password" name="oldPassword" placeholder="Old Password" required="required" class="form-control middle">
-            <input type="password" name="newPassword" placeholder="New Password" required="required" class="form-control middle">
-            <input type="password" name="newPasswordVerify" placeholder="New Password Verify" required="required" class="form-control bottom">
-            <button class="btn btn-lg btn-danger btn-block" type="submit">Change Password</button>
-        </form>
-    </div>
+    <!-- /.login-box-body -->
 </div>
-<div class="text-center">
-    <ul class="list-inline">
-        <li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
-        <li><a class="text-muted" href="#reset" data-toggle="tab">Reset Password</a></li>
-        <li><a class="text-muted" href="#change" data-toggle="tab">Change Password</a></li>
-    </ul>
-</div>
+<!-- /.login-box -->
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>

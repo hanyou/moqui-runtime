@@ -25,6 +25,7 @@ along with this software (see the LICENSE.md file). If not, see
         <set field="componentInfoList" from="orderMapList(ec.factory.getComponentInfoList(), ['^name'])"/>
     </actions>
     <widgets>
+        <x-page>
         <container-row><row-col md="6">
             <container-box><box-header><label text="Server Admin" type="h5"/></box-header><box-body>
                 <link url="../Cache" text="Cache Stats and Mgmt"/>
@@ -150,5 +151,6 @@ along with this software (see the LICENSE.md file). If not, see
                 <field name="dependsOnNames"><default-field><display/></default-field></field>
             </form-list>
         </box-body-nopad></container-box>
+        </x-page>
     </widgets>
 </screen>
