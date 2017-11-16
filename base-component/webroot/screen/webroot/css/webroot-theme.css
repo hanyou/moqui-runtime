@@ -87,3 +87,23 @@
     0% { transform: rotate(0deg); transform: rotate(0deg); }
     100% { transform: rotate(360deg); transform: rotate(360deg); }
 }
+
+.form-order-by a:hover { color: blue; }
+.form-order-by a.active { color: red; }
+.form-order-by a.active:hover { color: darkred; }
+/*
+nav.form-list-nav, table.table>thead>tr>th { background: #eee; }
+*/
+.form-list-nav-row {
+    background: #ecf0f5;
+}
+.pagination > li > span {
+    font-weight: 400;
+    color: #777;
+    cursor: not-allowed;
+}
+.pagination>li>a {
+    background: #ffffff;
+    color: #337ab7;
+    font-weight: 400;
+}

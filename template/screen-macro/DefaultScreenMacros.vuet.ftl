@@ -67,39 +67,16 @@ ${sri.renderSection(.node["@name"])}
 <#macro nodeId widgetNode><#if .node["@id"]?has_content>${ec.getResource().expandNoL10n(widgetNode["@id"], "")}<#if listEntryIndex?has_content>_${listEntryIndex}</#if><#if sectionEntryIndex?has_content>_${sectionEntryIndex}</#if></#if></#macro>
 
 <#macro "x-page">
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Blank page
-        <small>it all starts here</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-    </ol>
-</section>
-<!-- Main content -->
 <section class="content">
-    <!-- Default box -->
     <div class="box">
-        <div class="box-header with-border">
-            <h3 class="box-title">Title</h3>
-        </div>
         <div class="box-body">
-            <#assign contDivId><@nodeId .node/></#assign>
-            <${.node["@type"]!"div"}<#if contDivId?has_content> id="${contDivId}"</#if><#if .node["@style"]?has_content> class="${ec.getResource().expandNoL10n(.node["@style"], "")}"</#if>>
+        <#assign contDivId><@nodeId .node/></#assign>
+        <${.node["@type"]!"div"}<#if contDivId?has_content> id="${contDivId}"</#if><#if .node["@style"]?has_content> class="${ec.getResource().expandNoL10n(.node["@style"], "")}"</#if>>
             <#recurse>
         </${.node["@type"]!"div"}>
+        </div>
     </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-    </div>
-    <!-- /.box-footer-->
-    </div>
-    <!-- /.box -->
 </section>
-<!-- /.content -->
 </#macro>
 
 <#macro container>

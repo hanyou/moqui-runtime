@@ -212,7 +212,7 @@
                 <#assign secondUrlInstance = sri.buildUrl(secondScreenPath)>
                 <#assign secondSubscreensItems = secondScreenDef.getMenuSubscreensItems()>
                 <li class="treeview">
-                    <m-link href="${secondUrlInstance.path}" class="">
+                    <m-link href="${secondUrlInstance.path}">
                         <#if secondUrlInstance.sui.menuImage?has_content>
                             <#if secondUrlInstance.sui.menuImageType == "icon">
                                 <i class="${secondUrlInstance.sui.menuImage}"></i>
@@ -239,8 +239,8 @@
                         <#assign thirdScreenPath = "${secondScreenPath}/${secondSubscreensItem.name}">
                         <#assign thirdUrlInstance = sri.buildUrl(thirdScreenPath)>
                         <#assign thirdSubscreensItems = thirdScreenDef.getMenuSubscreensItems()>
-                        <li class="treeview">
-                            <m-link href="${thirdUrlInstance.path}" class="">
+                        <li class="treeview" :class="{'active': currentPath == '${thirdUrlInstance.path}'}">
+                            <m-link href="${thirdUrlInstance.path}">
                                 <#if thirdUrlInstance.sui.menuImage?has_content>
                                     <#if thirdUrlInstance.sui.menuImageType == "icon">
                                         <i class="${thirdUrlInstance.sui.menuImage}"></i>
@@ -270,6 +270,18 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                {{currentMenu?currentMenu.title:"Welcome"}}
+                <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li v-for="menu in navMenuList">
+                    <m-link :href="menu.path">{{menu.title}}</m-link>
+                </li>
+            </ol>
+        </section>
         <subscreens-active></subscreens-active>
     </div>
     <!-- /.content-wrapper -->

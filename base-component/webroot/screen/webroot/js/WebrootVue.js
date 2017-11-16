@@ -1075,7 +1075,7 @@ moqui.webrootVue = new Vue({
     el: '#apps-root',
     data: { basePath:"", linkBasePath:"", currentPathList:[], extraPathList:[], activeSubscreens:[], currentParameters:{}, bodyParameters:null,
         navMenuList:[], navHistoryList:[], navPlugins:[], notifyHistoryList:[], lastNavTime:Date.now(), loading:0, activeContainers:{},
-        moquiSessionToken:"", appHost:"", appRootPath:"", userId:"", locale:"en", notificationClient:null },
+        moquiSessionToken:"", appHost:"", appRootPath:"", userId:"", locale:"en", notificationClient:null, currentMenu:null },
     methods: {
         setUrl: function(url, bodyParameters) {
             // always set bodyParameters, setting to null when not specified to clear out previous
@@ -1083,7 +1083,7 @@ moqui.webrootVue = new Vue({
             // make sure any open modals are closed before setting current URL
             $('.modal.in').modal('hide');
             if (url.indexOf(this.basePath) === 0) url = url.replace(this.basePath, this.linkBasePath);
-            // console.info('setting url ' + url + ', cur ' + this.currentLinkUrl);
+            console.log('setting url ' + url + ', cur ' + this.currentLinkUrl);
             if (this.currentLinkUrl === url && url !== this.linkBasePath) {
                 this.reloadSubscreens(); /* console.info('reloading, same url ' + url); */
             } else {
@@ -1186,6 +1186,7 @@ moqui.webrootVue = new Vue({
         navMenuList: function(newList) { if (newList.length > 0) {
             console.log(newList);
             var cur = newList[newList.length - 1];
+            this.currentMenu = cur;
             var par = newList.length > 1 ? newList[newList.length - 2] : null;
             // if there is an extraPathList set it now
             if (cur.extraPathList) this.extraPathList = cur.extraPathList;

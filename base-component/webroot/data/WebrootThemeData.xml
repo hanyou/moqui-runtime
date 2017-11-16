@@ -43,9 +43,9 @@ along with this software (see the LICENSE.md file). If not, see
 
     <!-- Webroot layout and theme -->
     <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="20" resourceTypeEnumId="STRT_STYLESHEET"
-            resourceValue="/css/webroot-layout.css"/>
+            resourceValue="/css/webroot-layout.css?1"/>
     <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="21" resourceTypeEnumId="STRT_STYLESHEET"
-            resourceValue="/css/webroot-theme.css"/>
+            resourceValue="/css/webroot-theme.css?1"/>
 
     <!-- Logo, icon, body class -->
     <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="100" resourceTypeEnumId="STRT_HEADER_LOGO"

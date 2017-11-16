@@ -20,12 +20,11 @@
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Admin</b>LTE</a>
+        <a href="#"><b>Eason</b>EAP</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
-
         <form action="${sri.buildUrl("login").url}" id="login_form" method="post">
             <div class="form-group has-feedback">
                 <input type="text" name="username" value="${(ec.getWeb().getErrorParameters().get("username"))!""}"

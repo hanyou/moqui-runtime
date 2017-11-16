@@ -5,3 +5,61 @@
 .Login {
     background: #d2d6de
 }
+
+.e2-list-toolbar {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.e2-list-toolbar form {
+    display: inline-block;
+}
+
+.e2-list-toolbar #FilterForm {
+    float: right;
+}
+
+.e2-list-toolbar #FilterForm label {
+    display: none;
+}
+
+.e2-list-toolbar #FilterForm .form-group {
+    margin-bottom: 0px;
+}
+
+.e2-list-toolbar #FilterForm input {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+
+
+/* these are still used when a row has more than 2 fields in it */
+.big-row-item { display: inline-block; margin-left: 15px; margin-right: 15px; }
+.big-row-item input, .big-row-item select, .big-row-item span.select2-container { display: inline-block; }
+.big-row-item>.form-group { margin-bottom: 0; }
+.big-row-item>.form-group>label { display: block; text-align: left; }
+
+nav.form-list-nav .pagination { margin: 5px 0 0 0; }
+
+/*
+nav.form-list-nav>form.form-inline { display: inline-block; margin: 2px 6px 0 0; float: left; }
+nav.form-list-nav>.btn { display: inline-block; margin: 6px 6px 0 6px; float: left; }
+nav.form-list-nav>span.select2-container { float: left; margin: 6px 0 6px 0; min-width: 100px; max-width: 160px; }
+*/
+
+/* Variations on Bootstrap default table styles */
+.table>thead>tr>th {
+    vertical-align: top;
+}
+.table>tbody>tr>td { vertical-align: middle; }
+.table { margin-bottom: 8px; }
+
+/* These are for form-list titles and order by links */
+.form-title { white-space: nowrap; font-weight: bold; }
+.form-order-by { margin: 0; white-space: nowrap; height: 18px; display: inline-block; vertical-align: top; }
+.form-order-by a { display: block; height: 10px; font-size: 10px; margin: -1px 0; }
+.form-header-field { white-space: nowrap; padding-top: 4px; }

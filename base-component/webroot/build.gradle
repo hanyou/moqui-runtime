@@ -22,6 +22,7 @@ def libsPath = webrootPath + "/libs"
 def downloadBase = "http://cdnjs.cloudflare.com/ajax/libs/"
 def fileMap = [
     "twitter-bootstrap/3.3.7/css/bootstrap.min.css":"",
+    //"twitter-bootstrap/3.3.7/css/bootstrap.min.css.map":"",
     "twitter-bootstrap/3.3.7/js/bootstrap.min.js":"",
     "twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot":"",
     "twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg":"",
@@ -44,6 +45,7 @@ def fileMap = [
     "ionicons/2.0.1/fonts/ionicons.woff":"",
     //admin-lte
     "admin-lte/2.4.2/css/AdminLTE.min.css":"",
+    //"admin-lte/2.4.2/css/adminlte.min.css.map":"",
     "admin-lte/2.4.2/css/skins/_all-skins.min.css":"",
 //    "admin-lte/2.4.2/css/alt/AdminLTE-bootstrap-social.min.css":"",
 //    "admin-lte/2.4.2/css/alt/AdminLTE-fullcalendar.min.css":"",
@@ -150,6 +152,7 @@ baseJs.add(webrootPath + '/js/jquery-sortable-lists/jquery-sortable-lists.min.js
 // AdminLTE
 baseJs.add(libsPath + '/jQuery-slimScroll/jquery.slimscroll.min.js')
 baseJs.add(libsPath + '/fastclick/fastclick.min.js')
+baseJs.add(libsPath + '/pace/pace.min.js')
 baseJs.add(libsPath + '/admin-lte/js/adminlte.min.js')
 
 // Moqui Library (3rd party lib workarounds, NotificationClient, etc)

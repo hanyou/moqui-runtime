@@ -37,38 +37,42 @@ along with this software (see the LICENSE.md file). If not, see
         <script>paginateList("entityList", null, context)</script>
     </actions>
     <widgets>
-        <link url="checkTables" text="Check/Update All Tables"/>
-        <container-dialog id="LiquibaseInitDialog" button-text="Liquibase Init XML">
-            <form-single name="LiquibaseInit" transition="getLiquibaseInitXml">
-                <field name="filterRegexp"><default-field><text-line size="40"/></default-field></field>
-                <field name="submitButton"><default-field title="Download"><submit/></default-field></field>
-            </form-single>
-        </container-dialog>
-
-        <form-single name="FilterForm" transition=".">
-            <field name="filterRegexp"><default-field><text-line size="30"/></default-field></field>
-            <field name="submitButton"><default-field title="Filter"><submit/></default-field></field>
-            <field-layout><field-row-big><field-ref name="filterRegexp"/><field-ref name="submitButton"/></field-row-big></field-layout>
-        </form-single>
-        <form-list name="EntityList" list="entityList">
-            <field name="package">
-                <header-field show-order-by="true"/>
-                <default-field><display also-hidden="false"/></default-field>
-            </field>
-            <field name="entityName">
-                <header-field show-order-by="true"/>
-                <default-field><display also-hidden="false"/></default-field>
-            </field>
-            <field name="isView">
-                <header-field title="View##DataBase" show-order-by="true"/>
-                <default-field><display also-hidden="false"/></default-field>
-            </field>
-            <field name="find"><default-field>
-                <link url="find" text="Find" link-type="anchor" parameter-map="[selectedEntity:fullEntityName]"/>
-            </default-field></field>
-            <field name="detail"><default-field>
-                <link url="detail" text="Detail" link-type="anchor" parameter-map="[selectedEntity:fullEntityName]"/>
-            </default-field></field>
-        </form-list>
+        <x-page>
+            <container-row style="e2-list-toolbar"><row-col md="6">
+                <link url="checkTables" text="更新"/>
+                <container-dialog id="LiquibaseInitDialog" button-text="Liquibase Init XML">
+                    <form-single name="LiquibaseInit" transition="getLiquibaseInitXml">
+                        <field name="filterRegexp"><default-field><text-line size="40"/></default-field></field>
+                        <field name="submitButton"><default-field title="Download"><submit/></default-field></field>
+                    </form-single>
+                </container-dialog>
+            </row-col><row-col md="6">
+                <form-single name="FilterForm" transition=".">
+                    <field name="filterRegexp"><default-field><text-line/></default-field></field>
+                    <field name="submitButton"><default-field title=""><submit icon="fa fa-search"/></default-field></field>
+                    <field-layout><field-row-big><field-ref name="filterRegexp"/><field-ref name="submitButton"/></field-row-big></field-layout>
+                </form-single>
+            </row-col></container-row>
+            <form-list name="EntityList" list="entityList">
+                <field name="package">
+                    <header-field show-order-by="true"/>
+                    <default-field><display also-hidden="false"/></default-field>
+                </field>
+                <field name="entityName">
+                    <header-field show-order-by="true"/>
+                    <default-field><display also-hidden="false"/></default-field>
+                </field>
+                <field name="isView">
+                    <header-field title="View##DataBase" show-order-by="true"/>
+                    <default-field><display also-hidden="false"/></default-field>
+                </field>
+                <field name="find"><default-field>
+                    <link url="find" text="Find" link-type="anchor" parameter-map="[selectedEntity:fullEntityName]"/>
+                </default-field></field>
+                <field name="detail"><default-field>
+                    <link url="detail" text="Detail" link-type="anchor" parameter-map="[selectedEntity:fullEntityName]"/>
+                </default-field></field>
+            </form-list>
+        </x-page>
     </widgets>
 </screen>
